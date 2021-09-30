@@ -1,0 +1,12 @@
+mixin news-card(data)
+  .news-card
+    .news-card__image: a(href='#'): +bgimage(data.image)
+    .news-card__main
+      .news-card__date
+        div
+          span.nc-day= data.date[0]
+          span.nc-month= data.date[1]+'.'+data.date[1]
+      .news-card__text
+        .news-card__title
+          a(href='#')= data.title
+        .news-card__desc= data.desc

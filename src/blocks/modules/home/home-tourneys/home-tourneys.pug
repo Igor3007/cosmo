@@ -1,0 +1,10 @@
+include ../../tourney/tourney-card/tourney-card.pug
+
+mixin home-tourneys
+  section.section-home-tourneys
+    .container
+      .home-tourneys
+        .home-tourneys__title
+        .home-tourneys__list
+          each item in app.tourney
+            .home-tourneys__item: +tourney-card(item)

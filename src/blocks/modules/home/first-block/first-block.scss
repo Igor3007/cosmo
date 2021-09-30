@@ -1,0 +1,143 @@
+.section-first-block {
+    padding-top: 0;
+    position: relative;
+    z-index: 9;
+}
+
+
+.first-block {
+
+    position: relative;
+
+    &__bg {
+
+        position: relative;
+        z-index: 1;
+
+        @media screen and (max-width: $w1100) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        & .bgimage {
+            padding-top: 37.2%;
+            @include bgimage-cover;
+            min-height: rem(600);
+            background-color: #eee;
+
+            @media screen and (max-width: $w480) {
+                padding-top: auto;
+                min-height: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    &__content {
+        @include layer(2);
+        // background: rgba(33, 43, 47, 0.8);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: $w1100) {
+            position: relative;
+            padding: rem(80) 0;
+        }
+
+        @media screen and (max-width: $w580) {
+            padding: 3rem 0;
+        }
+
+        & .container {
+            max-width: 1230px;
+        }
+    }
+
+
+
+    &__title {
+
+        max-width: rem(480);
+        margin-right: auto;
+
+        @media screen and (max-width: $w480) {
+            padding-top: 61px;
+        }
+
+        & h1 {
+
+
+            line-height: 130%;
+            text-align: left;
+            color: #FFFFFF;
+            font-size: rem(36);
+            color: #000;
+
+            @media screen and (max-width: $w480) {
+
+                font-size: 24px;
+
+                & br {
+                    display: none;
+                }
+            }
+
+        }
+
+        padding-bottom: rem(25);
+    }
+
+    &__desc {
+
+
+        color: #000;
+        max-width: 480px;
+        margin-right: auto;
+        padding-bottom: rem(25);
+
+
+
+    }
+
+    &__btn {
+        @media screen and (min-width: $w940) {
+            & button {
+                min-width: rem(180);
+            }
+        }
+    }
+
+
+}
+
+
+
+.select-inmap {
+    display: flex;
+    align-items: center;
+    color: $black;
+    padding: 0 rem(15);
+    cursor: pointer;
+    height: 40px;
+    white-space: nowrap;
+
+    font-size: 14px
+        /*14*/
+    ;
+    text-transform: uppercase;
+    color: #222B32;
+
+    &:hover {
+        background-color: $gray;
+    }
+
+    & svg {
+        margin-right: rem(10);
+    }
+}

@@ -1,0 +1,40 @@
+.section-home-clients {
+    @include section-padding;
+
+    @media screen and (min-width: $w1376) {
+        padding-top: rem(15);
+    }
+
+}
+
+.home-clients {
+
+    &__title {
+
+        @include section-title;
+        padding-bottom: rem(30);
+
+        @media screen and (max-width: $w480) {
+            @include section-title;
+            text-align: center;
+        }
+
+
+    }
+
+    &__item {
+
+        transition: 0.5s ease;
+        background-color: transparent;
+
+        & .bgimage {
+            padding-top: 35%;
+            @include bgimage-contain;
+            mix-blend-mode: multiply;
+        }
+
+        &:hover {
+            background-color: $gray;
+        }
+    }
+}

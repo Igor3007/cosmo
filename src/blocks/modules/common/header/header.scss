@@ -1,0 +1,138 @@
+.header {
+
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+
+    &__logo {
+        width: 100%;
+        max-width: 180px;
+
+        & .bgimage {
+            padding-top: 50%;
+            @include bgimage-contain;
+        }
+    }
+
+    &__main {
+        margin-left: auto;
+    }
+
+    &__nav {
+        flex-grow: 1;
+        align-items: center;
+        display: flex;
+
+        @media screen and (max-width: $w1100) {
+            display: none;
+        }
+
+        & ul {
+            display: flex;
+
+            & li {
+                & a {
+                    display: inline-block;
+                    margin-left: rem(58);
+                    font-size: 15px;
+                    letter-spacing: 0.1em;
+                    color: $black;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 0;
+                        bottom: 0;
+                        height: 1px;
+                        background-color: $main;
+                        transition: 0.4s ease;
+                    }
+
+                    &.active,
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+
+                    @media screen and (max-width: $w1660) {
+                        margin-left: rem(30);
+                    }
+
+                }
+            }
+        }
+    }
+
+    &__mobile {
+
+
+        display: flex;
+        align-items: center;
+        padding-left: 18px;
+        margin-right: auto;
+
+
+        @media screen and (min-width: $w1100) {
+            display: none;
+        }
+
+        @media screen and (max-width: $w480) {
+            height: 60px;
+            order: 1;
+            margin-right: 0;
+
+            & .burger {
+                & i {
+                    background-color: #fff;
+                }
+
+                &.open i {
+                    background-color: $black;
+                }
+            }
+        }
+
+
+    }
+
+    &__msgr {
+        & ul {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            justify-content: flex-end;
+            padding-bottom: rem(20);
+
+
+            & li {
+                padding: 0 rem(5);
+
+                & a {
+                    width: rem(40);
+                    height: rem(40);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $main;
+                    border-radius: 50%;
+
+                    transition: box-shadow 0.5s ease;
+
+                    &:hover {
+                        box-shadow: 0 0 6px 0px $main;
+                    }
+
+                    & svg {
+                        width: rem(18);
+                        min-width: rem(18);
+                        height: rem(18);
+                        fill: #000;
+                    }
+                }
+            }
+        }
+    }
+}

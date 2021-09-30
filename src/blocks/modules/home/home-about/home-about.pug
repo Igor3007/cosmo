@@ -1,0 +1,12 @@
+
+mixin home-about
+  section.section-home-about
+    .container
+      .home-about
+        .home-about__text
+          .home-about__title О нашем теннисном клубе
+          .home-about__desc Могилевское областное отделение федерации - это организационная структура, обособленное структурное подразделение федерации, осуществляющая свою деятельность на территории Могилевской области в соответствии с Уставом федерации, Положением, иными локальными нормативными правовыми актами федерации и организационно-распорядительными документами федерации (далее – региональное отделение).
+        .home-about__gallery
+          ul
+            each item in app.gallery
+              li: a(href=item.thumb data-fancybox="gallery" data-type="image"): +bgimage(item.thumb)

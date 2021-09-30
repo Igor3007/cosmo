@@ -1,0 +1,20 @@
+.container
+  .header
+    .header__mobile
+      .burger
+        i
+        i
+        i
+    .header__logo
+      a(href='#'): +bgimage('/img/common/logo.png')
+    .header__main
+      .header__msgr
+        ul
+          li.ic_fb: a(href='#'): +icons('#ic_fb')
+          li.ic_vk: a(href='#'): +icons('#ic_vk')
+          li.ic_ig: a(href='#'): +icons('#ic_ig')
+      .header__nav
+        nav
+          ul
+            each item in app.mainMenu
+              li: a(href=item.href)= item.text

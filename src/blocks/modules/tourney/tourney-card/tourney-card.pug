@@ -1,0 +1,15 @@
+mixin tourney-card(data)
+  .tourney-card
+    .tourney-card__top
+      .tourney-card__image: a(href='#'): +bgimage(data.image)
+      .tourney-card__date
+        +icons('#ic_calendar', 17)
+        span= data.date
+
+    .tourney-card__main
+      .tourney-card__title: a(href="#")= data.title
+      .tourney-card__desc: span= data.desc
+      .tourney-card__cat!= '<span>Категория</span> '+data.category+''
+
+
+

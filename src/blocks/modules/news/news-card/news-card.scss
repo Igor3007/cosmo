@@ -1,0 +1,73 @@
+.news-card {
+    &__image {
+        & .bgimage {
+            padding-top: 65%;
+            @include bgimage-cover;
+            background-color: #eee;
+        }
+    }
+
+    &__main {
+        display: flex;
+        padding-top: rem(25);
+    }
+
+    &__date {
+        display: flex;
+        flex-direction: column;
+        padding-right: 20px;
+
+
+        &>div {
+            display: block;
+            min-width: 70px;
+            border: 1px solid $main;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        & span {
+            display: block;
+
+            &.nc-day {
+                font-weight: 300;
+                font-size: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: #000000;
+                text-align: center;
+                padding-bottom: 5px;
+            }
+
+            &.nc-month {
+                font-family: Manrope;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: center;
+                color: #000000;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: rem(18);
+        line-height: rem(25);
+        color: #000000;
+        margin-bottom: rem(15);
+        @include line-clamp(2);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__desc {
+        font-size: 14px;
+        @include line-clamp(4);
+        font-weight: 300;
+
+    }
+}

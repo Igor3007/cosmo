@@ -1,0 +1,46 @@
+.section-home-about {
+    @include section-padding;
+}
+
+.home-about {
+
+    @include row-flex();
+
+    &__text {
+        @include col();
+        @include size-w1024(4);
+    }
+
+    &__gallery {
+        @include col();
+        @include size-w1024(8);
+    }
+
+    &__title {
+        @include section-title;
+        padding-bottom: rem(25);
+    }
+
+    &__desc {
+        max-width: 400px;
+        margin-right: auto;
+    }
+
+    &__gallery {
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            & li {
+                @include size-w1024(4);
+                padding: 10px;
+
+                & .bgimage {
+                    padding-top: 100%;
+                    @include bgimage-cover;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.tourney-card {
+    &__image {
+        & .bgimage {
+            padding-top: 40%;
+            @include bgimage-cover;
+            background-color: #eee;
+        }
+    }
+
+    &__main {
+        background-color: #EFEFEF;
+    }
+
+    &__top {
+        position: relative;
+    }
+
+    &__date {
+        background: #46484F;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 8px;
+
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        & svg {
+            margin-right: 7px;
+        }
+
+        & span {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 150%;
+            color: #FFFFFF;
+        }
+    }
+
+    &__main {
+        padding: 20px;
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: rem(18);
+        @include line-clamp(2);
+    }
+
+    &__desc {
+        min-height: rem(80);
+
+        & span {
+            font-size: 14px;
+
+            font-weight: 300;
+            @include line-clamp(3);
+        }
+
+    }
+
+    &__cat {
+        font-size: 14px;
+        font-weight: 300;
+
+        & span {
+            font-weight: bold;
+        }
+    }
+}

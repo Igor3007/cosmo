@@ -1,0 +1,29 @@
+extends layouts/index
+
+include ../blocks/modules/home/first-block/first-block
+
+include ../blocks/modules/home/home-news/home-news
+include ../blocks/modules/home/home-about/home-about
+include ../blocks/modules/home/home-clients/home-clients
+include ../blocks/modules/home/home-tourneys/home-tourneys
+
+
+block variables
+  include ../data/data.pug
+
+
+block content
+
+  +first-block()
+  +home-news
+  +home-about
+  +home-clients
+  +home-tourneys
+
+
+
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")
