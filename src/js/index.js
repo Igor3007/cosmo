@@ -131,26 +131,67 @@ Swiper.use([Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-  $(document).ready(function(){
-  
-  
-    $.ajax({
-           type: "GET",
-           url: "http://api.graph.fvds.ru/sites/",
-           dataType: "json",
-           success: function (response) {
-               console.log(response)
-               $('.res').text(response)
-           }
-       });
-     
-   })
-
  
 
   /* ===================================================== */
   /* ===================================================== */
+ 
+  //data-swiper="homenews"
+  const homenews = new Swiper('[data-swiper="homenews"]', {
+     
+    slidesPerView: 3,
+    spaceBetween: 40,
+    loop: true,
+     
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      580: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+  
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25,
+      },
+      1025: {
+        slidesPerView: 3,
+      },
+    },
+      
+       
+  });
+  
+  //data-swiper="hometournay"
+  const hometournay = new Swiper('[data-swiper="hometournay"]', {
+     
+    slidesPerView: 3,
+    spaceBetween: 40,
+    loop: true,
+     
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      580: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+  
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25,
+      },
+      1025: {
+        slidesPerView: 3,
+      },
+    },
+      
+       
+  });
+
  
 
   

@@ -3107,6 +3107,25 @@ section {
   transition-delay: 0s, .15s;
 }
 
+header.open {
+  position: relative;
+  z-index: 10;
+}
+
+header.open .header__mobile {
+  z-index: 12;
+  margin-left: auto;
+}
+
+header.open .header__mobile .burger {
+  position: relative;
+  top: -30px;
+}
+
+header.open .header__mobile span {
+  display: none;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -3119,7 +3138,7 @@ section {
 }
 
 .header__logo .bgimage {
-  padding-top: 50%;
+  padding-top: 62%;
   position: relative;
   background-size: contain;
   background-position: center;
@@ -3148,6 +3167,7 @@ section {
   letter-spacing: 0.1em;
   color: #222B32;
   position: relative;
+  font-weight: 300;
 }
 
 .header__nav ul li a::before {
@@ -3170,7 +3190,18 @@ section {
   display: flex;
   align-items: center;
   padding-left: 18px;
-  margin-right: auto;
+}
+
+.header__mobile > span {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.header__mobile .burger i {
+  background-color: #AAD837;
 }
 
 .header__msgr ul {
@@ -3205,6 +3236,120 @@ section {
   min-width: 1.125rem;
   height: 1.125rem;
   fill: #000;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 3.125rem 0;
+  background-color: #46484F;
+  color: #fff;
+}
+
+.footer-nav {
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+}
+
+.footer-nav nav {
+  margin: 0 auto;
+}
+
+.footer-nav ul {
+  display: flex;
+}
+
+.footer-nav ul li:first-child a {
+  margin-left: 0rem;
+}
+
+.footer-nav ul li a {
+  display: inline-block;
+  margin: 0 1.5625rem;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: #222B32;
+  position: relative;
+  color: #fff;
+}
+
+.footer-nav ul li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #AAD837;
+  transition: 0.4s ease;
+}
+
+.footer-nav ul li a.active::before,
+.footer-nav ul li a:hover::before {
+  width: 100%;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.875rem;
+}
+
+.footer-info__msgr ul {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.footer-info__msgr ul li {
+  padding: 0 0.3125rem;
+}
+
+.footer-info__msgr ul li a {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #AAD837;
+  border-radius: 50%;
+  transition: box-shadow 0.5s linear;
+}
+
+.footer-info__msgr ul li a:hover {
+  box-shadow: 0 0 15px -1px #AAD837;
+}
+
+.footer-info__msgr ul li a svg {
+  width: 1.125rem;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  fill: #000;
+}
+
+.footer-info__dev a {
+  display: flex;
+  align-items: center;
+}
+
+.footer-info__dev span {
+  color: #fff;
+  opacity: 0.42;
+  font-size: 14px;
+}
+
+.footer-info__dev .bgimage {
+  padding-top: 20px;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  width: 9.375rem;
+  margin-left: 0.625rem;
 }
 
 .section-first-block {
@@ -3271,6 +3416,8 @@ section {
   max-width: 480px;
   margin-right: auto;
   padding-bottom: 1.5625rem;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .select-inmap {
@@ -3299,14 +3446,14 @@ section {
   padding-top: 2.5rem;
 }
 
-.home-news__list {
+.swiper-container:not(.swiper-container-initialized) .home-news__list {
   display: flex;
   flex-wrap: wrap;
   margin-left: -20px;
   margin-right: -20px;
 }
 
-.home-news__item {
+.swiper-container:not(.swiper-container-initialized) .home-news__item {
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 20px;
@@ -3330,6 +3477,7 @@ section {
   word-wrap: break-word;
   margin-left: 20px;
   margin-right: 20px;
+  width: calc(100% - 40px);
 }
 
 .home-about__gallery {
@@ -3337,6 +3485,7 @@ section {
   word-wrap: break-word;
   margin-left: 20px;
   margin-right: 20px;
+  width: calc(100% - 40px);
 }
 
 .home-about__title {
@@ -3349,8 +3498,11 @@ section {
 }
 
 .home-about__desc {
-  max-width: 400px;
+  max-width: 380px;
   margin-right: auto;
+  font-size: 15px;
+  line-height: 150%;
+  font-weight: 300;
 }
 
 .home-about__gallery ul {
@@ -3359,7 +3511,13 @@ section {
 }
 
 .home-about__gallery ul li {
-  padding: 10px;
+  width: 33.33%;
+  padding: 0.625rem;
+}
+
+.home-about__gallery ul li a {
+  display: block;
+  overflow: hidden;
 }
 
 .home-about__gallery ul li .bgimage {
@@ -3369,8 +3527,13 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  transition: 0.3s ease;
+  transition: 0.15s linear;
+  transform: scale(1.001);
   background-color: #eee;
+}
+
+.home-about__gallery ul li .bgimage:hover {
+  transform: scale(1.05);
 }
 
 .section-home-tourneys {
@@ -3378,14 +3541,14 @@ section {
   padding-top: 2.5rem;
 }
 
-.home-tourneys__list {
+.swiper-container:not(.swiper-container-initialized) .home-tourneys__list {
   display: flex;
   flex-wrap: wrap;
   margin-left: -20px;
   margin-right: -20px;
 }
 
-.home-tourneys__item {
+.swiper-container:not(.swiper-container-initialized) .home-tourneys__item {
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 20px;
@@ -3425,6 +3588,10 @@ section {
   background-color: #F6F6F6;
 }
 
+.news-card__image {
+  overflow: hidden;
+}
+
 .news-card__image .bgimage {
   padding-top: 65%;
   position: relative;
@@ -3432,8 +3599,13 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  transition: 0.3s ease;
+  transition: 0.15s linear;
+  transform: scale(1.001);
   background-color: #eee;
+}
+
+.news-card__image .bgimage:hover {
+  transform: scale(1.05);
 }
 
 .news-card__main {
@@ -3449,7 +3621,7 @@ section {
 
 .news-card__date > div {
   display: block;
-  min-width: 70px;
+  min-width: 4.375rem;
   border: 1px solid #AAD837;
   border-radius: 5px;
   padding: 5px;
@@ -3461,8 +3633,8 @@ section {
 
 .news-card__date span.nc-day {
   font-weight: 300;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   color: #000000;
   text-align: center;
@@ -3506,6 +3678,10 @@ section {
   font-weight: 300;
 }
 
+.tourney-card__image {
+  overflow: hidden;
+}
+
 .tourney-card__image .bgimage {
   padding-top: 40%;
   position: relative;
@@ -3513,8 +3689,13 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  transition: 0.3s ease;
+  transition: 0.15s linear;
+  transform: scale(1.001);
   background-color: #eee;
+}
+
+.tourney-card__image .bgimage:hover {
+  transform: scale(1.05);
 }
 
 .tourney-card__main {
@@ -3550,7 +3731,7 @@ section {
 }
 
 .tourney-card__main {
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .tourney-card__title {
@@ -3587,6 +3768,10 @@ section {
   font-weight: bold;
 }
 
+.news-card__image {
+  overflow: hidden;
+}
+
 .news-card__image .bgimage {
   padding-top: 65%;
   position: relative;
@@ -3594,8 +3779,13 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  transition: 0.3s ease;
+  transition: 0.15s linear;
+  transform: scale(1.001);
   background-color: #eee;
+}
+
+.news-card__image .bgimage:hover {
+  transform: scale(1.05);
 }
 
 .news-card__main {
@@ -3611,7 +3801,7 @@ section {
 
 .news-card__date > div {
   display: block;
-  min-width: 70px;
+  min-width: 4.375rem;
   border: 1px solid #AAD837;
   border-radius: 5px;
   padding: 5px;
@@ -3623,8 +3813,8 @@ section {
 
 .news-card__date span.nc-day {
   font-weight: 300;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   color: #000000;
   text-align: center;
@@ -3671,11 +3861,15 @@ section {
 /* page */
 
 @media screen and (min-width: 769px) {
-  .home-news__item {
+  .header__mobile {
+    display: none;
+  }
+
+  .swiper-container:not(.swiper-container-initialized) .home-news__item {
     width: calc(50% - 40px);
   }
 
-  .home-tourneys__item {
+  .swiper-container:not(.swiper-container-initialized) .home-tourneys__item {
     width: calc(50% - 40px);
   }
 }
@@ -3683,6 +3877,14 @@ section {
 @media screen and (min-width: 940px) {
   .first-block__btn button {
     min-width: 11.25rem;
+  }
+
+  .home-about__text {
+    width: calc(41.66667% - 40px);
+  }
+
+  .home-about__gallery {
+    width: calc(58.33333% - 40px);
   }
 }
 
@@ -3719,32 +3921,14 @@ section {
   .hidden {
     margin-right: 17px;
   }
-
-  .home-about__text {
-    width: calc(33.33333% - 40px);
-  }
-
-  .home-about__gallery {
-    width: calc(66.66667% - 40px);
-  }
-
-  .home-about__gallery ul li {
-    width: calc(33.33333% - 40px);
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .header__mobile {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 1280px) {
-  .home-news__item {
+  .swiper-container:not(.swiper-container-initialized) .home-news__item {
     width: calc(33.33333% - 40px);
   }
 
-  .home-tourneys__item {
+  .swiper-container:not(.swiper-container-initialized) .home-tourneys__item {
     width: calc(33.33333% - 40px);
   }
 }
@@ -3755,9 +3939,23 @@ section {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .home-about__text {
+    width: calc(33.33333% - 40px);
+  }
+
+  .home-about__gallery {
+    width: calc(66.66667% - 40px);
+  }
+}
+
 @media screen and (max-width: 1660px) {
   .header__nav ul li a {
     margin-left: 1.875rem;
+  }
+
+  .footer-nav ul li a {
+    margin: 0 0.9375rem;
   }
 }
 
@@ -3778,11 +3976,69 @@ section {
     height: 40px;
     font-size: 13px;
   }
+
+  .header__logo {
+    max-width: 132px;
+  }
+
+  .header__nav ul li a {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 1376px) {
   .container {
     max-width: 1200px;
+  }
+
+  .footer-nav ul li a {
+    font-size: 13px;
+  }
+
+  .home-about__desc {
+    font-size: 14px;
+  }
+
+  .news-card__date > div {
+    min-width: 4.0625rem;
+  }
+
+  .news-card__date span.nc-day {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+
+  .news-card__title {
+    font-size: 16px;
+  }
+
+  .news-card__desc {
+    font-size: 13px;
+  }
+
+  .tourney-card__title {
+    font-size: 16px;
+  }
+
+  .tourney-card__desc span {
+    font-size: 13px;
+  }
+
+  .news-card__date > div {
+    min-width: 4.0625rem;
+  }
+
+  .news-card__date span.nc-day {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+
+  .news-card__title {
+    font-size: 16px;
+  }
+
+  .news-card__desc {
+    font-size: 13px;
   }
 }
 
@@ -3815,16 +4071,16 @@ section {
     font-size: 2.375rem;
   }
 
+  .home-about__gallery ul li {
+    padding: 5px;
+  }
+
   .home-clients__title {
     font-size: 2.375rem;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  .header__nav {
-    display: none;
-  }
-
   .first-block__bg {
     position: absolute;
     left: 0;
@@ -3857,6 +4113,81 @@ section {
   .select-options {
     max-height: 30vh;
   }
+
+  .first-block__title h1 {
+    font-size: 28px;
+  }
+
+  .home-about__title {
+    text-align: center;
+  }
+
+  .home-about__desc {
+    margin-right: 0;
+    max-width: 100%;
+    text-align: center;
+    padding-bottom: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .header__main.open {
+    position: fixed;
+    z-index: 9;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #242424;
+    display: none;
+    overflow-y: scroll;
+    padding: 5rem 1.5625rem 3.75rem 1.5625rem;
+    animation: slide-Y 0.3s ease forwards;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .header__main.open .header__nav {
+    display: block;
+  }
+
+  .header__main.open .header__nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__main.open .header__nav li {
+    padding-bottom: 30px;
+  }
+
+  .header__main.open .header__nav li a {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .header__main.open .header__msgr ul {
+    justify-content: center;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__msgr ul {
+    padding-bottom: 0rem;
+  }
+
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-nav ul li {
+    padding-bottom: 0.625rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3876,6 +4207,7 @@ section {
 
   .first-block__content {
     padding: 3rem 0;
+    min-height: 36.25rem;
   }
 
   .section-home-news {
@@ -3884,6 +4216,10 @@ section {
 
   .section-home-about {
     padding: 1.875rem 0;
+  }
+
+  .home-about__gallery ul li {
+    padding: 2px;
   }
 
   .section-home-tourneys {
@@ -3914,18 +4250,36 @@ section {
     max-width: 100%;
   }
 
+  .header__main {
+    display: none;
+  }
+
   .header__mobile {
     height: 60px;
     order: 1;
     margin-right: 0;
+    margin-left: auto;
   }
 
-  .header__mobile .burger i {
-    background-color: #fff;
+  .footer-nav ul li {
+    text-align: center;
+    padding-bottom: 1.25rem;
   }
 
-  .header__mobile .burger.open i {
-    background-color: #222B32;
+  .footer-info {
+    flex-direction: column-reverse;
+  }
+
+  .footer-info__msgr {
+    margin-bottom: 1.5625rem;
+  }
+
+  .footer-info__dev span {
+    font-size: 13px;
+  }
+
+  .footer-info__dev .bgimage {
+    width: 8.125rem;
   }
 
   .first-block__bg .bgimage {
@@ -3940,10 +4294,26 @@ section {
 
   .first-block__title h1 {
     font-size: 24px;
+    text-align: center;
   }
 
   .first-block__title h1 br {
     display: none;
+  }
+
+  .first-block__desc {
+    text-align: center;
+    line-height: 150%;
+  }
+
+  .first-block__btn {
+    text-align: center;
+    padding-top: 2.1875rem;
+  }
+
+  .first-block__btn a {
+    margin: 0 auto;
+    display: inline-block;
   }
 
   .home-about__title {
@@ -3962,6 +4332,30 @@ section {
     color: #000;
     text-align: center;
   }
+
+  .news-card__date {
+    padding-right: 12px;
+  }
+
+  .news-card__title {
+    font-size: 14px;
+  }
+
+  .tourney-card__main {
+    padding: 15px;
+  }
+
+  .tourney-card__title {
+    font-size: 14px;
+  }
+
+  .news-card__date {
+    padding-right: 12px;
+  }
+
+  .news-card__title {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 480px) and (max-width: 1280px) {
@@ -3979,6 +4373,24 @@ section {
 @media screen and (max-width: 480px) and (max-width: 480px) {
   .home-clients__title {
     font-size: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 375.98px) {
+  .header__logo {
+    max-width: 100px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+  }
+
+  .footer-nav ul li a {
+    margin: 0;
+  }
+
+  .home-about__gallery ul li {
+    padding: 1px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

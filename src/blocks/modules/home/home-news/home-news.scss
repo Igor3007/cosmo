@@ -4,15 +4,19 @@
     padding-top: rem(40)
 }
 
-.home-news {
-    &__list {
-        @include row-flex;
-    }
 
-    &__item {
-        @include col();
-        @include size-w1280(4);
-        @include size-w760(6);
-        @include size(12);
+
+.swiper-container:not(.swiper-container-initialized) {
+    .home-news {
+        &__list {
+            @include row-flex;
+        }
+
+        &__item {
+            @include col();
+            @include size-w1280(4);
+            @include size-w760(6);
+            @include size(12);
+        }
     }
 }

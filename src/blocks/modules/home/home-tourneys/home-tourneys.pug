@@ -6,5 +6,8 @@ mixin home-tourneys
       .home-tourneys
         .home-tourneys__title
         .home-tourneys__list
-          each item in app.tourney
-            .home-tourneys__item: +tourney-card(item)
+          .swiper-container(data-swiper="hometournay")
+            .swiper-wrapper
+              each item in app.tourney
+                .swiper-slide
+                  .home-tourneys__item: +tourney-card(item) 

@@ -46,7 +46,9 @@
 }
 
 @mixin modal-gray {
-    font-size: 14px /*14*/;
+    font-size: 14px
+        /*14*/
+    ;
     line-height: 140%;
     color: #838383;
 }
@@ -58,7 +60,8 @@
     background-position: center;
     background-repeat: no-repeat;
     display: block;
-    transition: 0.3s ease;
+    transition: 0.15s linear;
+    transform: scale(1.001);
 
     &:hover {
         transform: scale(1.05);

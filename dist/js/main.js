@@ -155,6 +155,40 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/modules/common/header/header.js":
+/*!****************************************************!*\
+  !*** ./src/blocks/modules/common/header/header.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $('.burger').on('click', function () {
+    $(this).toggleClass('open');
+    $('.header__main').toggleClass('open');
+    $('header').toggleClass('open'); // var innerHeaderHeight = $('header').innerHeight()
+    // $('.mobile-menu').toggleClass('open').css({
+    //     'top': innerHeaderHeight+'px'
+    // })
+
+    $('html').toggleClass('hidden');
+  }); //закрыть при клике вне
+
+  $(document).on('click', function (e) {
+    var div = $(".burger, .header__main"); //класс элемента вне которого клик
+
+    if (!div.is(e.target) && div.has(e.target).length === 0) {
+      //закрыть popup
+      if ($('.burger').hasClass('open')) {
+        $('.burger').trigger('click');
+      }
+    }
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/blocks/modules/home/home-clients/home-clients.js":
 /*!**************************************************************!*\
   !*** ./src/blocks/modules/home/home-clients/home-clients.js ***!
@@ -218,9 +252,10 @@ var clients = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-swiper="
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_home_home_clients_home_clients_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/home/home-clients/home-clients.js */ "./src/blocks/modules/home/home-clients/home-clients.js");
-// import "%modules%/header/header";
-// import "%modules%/main-menu/main-menu";
+/* harmony import */ var _modules_common_header_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/common/header/header */ "./src/blocks/modules/common/header/header.js");
+/* harmony import */ var _modules_common_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_common_header_header__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_home_home_clients_home_clients_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/home/home-clients/home-clients.js */ "./src/blocks/modules/home/home-clients/home-clients.js");
+ // import "%modules%/main-menu/main-menu";
 // import "%modules%/video/video";
 // import "%modules%/catalog/minicard/minicard";
 // import "%modules%/card/card-slider/card-slider";
@@ -229,6 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 // import "%modules%/card/card-mortgage/card-mortgage";
 // import "%modules%/jk/jk-mini-gallery/jk-mini-gallery";
 // import "%modules%/catalog/footer-link/footer-link.js";
+
 
 
 /***/ }),
@@ -242,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
 /* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/svg4everybody/dist/svg4everybody.js */ "./node_modules/svg4everybody/dist/svg4everybody.js");
@@ -374,27 +410,58 @@ var customSelect = /*#__PURE__*/function () {
 _node_modules_svg4everybody_dist_svg4everybody_js__WEBPACK_IMPORTED_MODULE_2___default()();
 swiper__WEBPACK_IMPORTED_MODULE_3__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_3__["Pagination"], swiper__WEBPACK_IMPORTED_MODULE_3__["Navigation"]]);
 document.addEventListener("DOMContentLoaded", function () {
-  $(document).ready(function () {
-    $.ajax({
-      type: "GET",
-      url: "http://api.graph.fvds.ru/sites/",
-      dataType: "json",
-      success: function success(response) {
-        console.log(response);
-        $('.res').text(response);
+  /* ===================================================== */
+
+  /* ===================================================== */
+  //data-swiper="homenews"
+  var homenews = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="homenews"]', {
+    slidesPerView: 3,
+    spaceBetween: 40,
+    loop: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      580: {
+        slidesPerView: 1.5,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25
+      },
+      1025: {
+        slidesPerView: 3
       }
-    });
+    }
+  }); //data-swiper="hometournay"
+
+  var hometournay = new swiper__WEBPACK_IMPORTED_MODULE_3__["default"]('[data-swiper="hometournay"]', {
+    slidesPerView: 3,
+    spaceBetween: 40,
+    loop: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      580: {
+        slidesPerView: 1.5,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25
+      },
+      1025: {
+        slidesPerView: 3
+      }
+    }
   });
-  /* ===================================================== */
-
-  /* ===================================================== */
-
   var selectCustom = new customSelect({
     selector: 'select'
   });
   selectCustom.init();
 }); //ready
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ })
 

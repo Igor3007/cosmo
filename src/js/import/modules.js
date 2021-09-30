@@ -1,4 +1,4 @@
-// import "%modules%/header/header";
+import "%modules%/common/header/header";
 // import "%modules%/main-menu/main-menu";
  
 // import "%modules%/video/video";

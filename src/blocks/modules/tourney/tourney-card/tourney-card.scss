@@ -1,8 +1,10 @@
 .tourney-card {
     &__image {
+        overflow: hidden;
+
         & .bgimage {
             padding-top: 40%;
-            @include bgimage-cover;
+            @include bgimage-cover-scale;
             background-color: #eee;
         }
     }
@@ -41,7 +43,11 @@
     }
 
     &__main {
-        padding: 20px;
+        padding: rem(20);
+
+        @media screen and (max-width: $w480) {
+            padding: 15px;
+        }
     }
 
     &__title {
@@ -49,6 +55,14 @@
         margin-bottom: 10px;
         font-size: rem(18);
         @include line-clamp(2);
+
+        @media screen and (max-width: $w1376) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: 14px;
+        }
     }
 
     &__desc {
@@ -59,6 +73,12 @@
 
             font-weight: 300;
             @include line-clamp(3);
+
+            @media screen and (max-width: $w1376) {
+                font-size: 13px;
+            }
+
+
         }
 
     }

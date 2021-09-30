@@ -1,10 +1,6 @@
 .container
   .header
-    .header__mobile
-      .burger
-        i
-        i
-        i
+
     .header__logo
       a(href='#'): +bgimage('/img/common/logo.png')
     .header__main
@@ -18,3 +14,9 @@
           ul
             each item in app.mainMenu
               li: a(href=item.href)= item.text
+    .header__mobile
+      span меню
+      .burger
+        i
+        i
+        i

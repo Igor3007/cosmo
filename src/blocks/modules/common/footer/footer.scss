@@ -1,0 +1,173 @@
+.footer {
+
+    display: flex;
+    align-items: center;
+    padding: rem(50) 0;
+    background-color: #46484F;
+    color: #fff;
+
+    &-nav {
+        flex-grow: 1;
+        align-items: center;
+        display: flex;
+
+        & nav {
+            margin: 0 auto;
+        }
+
+        & ul {
+            display: flex;
+
+            @media screen and (max-width: $w760) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            @media screen and (max-width: $w375) {
+                flex-direction: column;
+            }
+
+            & li {
+
+                @media screen and (max-width: $w760) {
+                    padding-bottom: rem(10);
+                }
+
+                @media screen and (max-width: $w480) {
+                    text-align: center;
+                    padding-bottom: rem(20);
+                }
+
+
+                &:first-child {
+                    & a {
+                        margin-left: rem(0);
+                    }
+                }
+
+                & a {
+                    display: inline-block;
+                    margin: 0 rem(25);
+                    font-size: 15px;
+                    letter-spacing: 0.1em;
+                    color: $black;
+                    position: relative;
+                    color: #fff;
+
+                    @media screen and (max-width: $w1376) {
+                        font-size: 13px;
+                    }
+
+                    @media screen and (max-width: $w375) {
+                        margin: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 0;
+                        bottom: 0;
+                        height: 1px;
+                        background-color: $main;
+                        transition: 0.4s ease;
+                    }
+
+                    &.active,
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+
+                    @media screen and (max-width: $w1660) {
+                        margin: 0 rem(15);
+                    }
+
+                }
+            }
+        }
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: rem(30);
+
+        @media screen and (max-width: $w480) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-info__msgr {
+
+        @media screen and (max-width: $w480) {
+            margin-bottom: rem(25);
+        }
+
+        & ul {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            justify-content: flex-end;
+
+
+            & li {
+                padding: 0 rem(5);
+
+                & a {
+                    width: rem(40);
+                    height: rem(40);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $main;
+                    border-radius: 50%;
+
+                    transition: box-shadow 0.5s linear;
+
+                    &:hover {
+                        box-shadow: 0 0 15px -1px #AAD837;
+                    }
+
+                    & svg {
+                        width: rem(18);
+                        min-width: rem(18);
+                        height: rem(18);
+                        fill: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    &-info__dev {
+
+        & a {
+            display: flex;
+            align-items: center;
+        }
+
+        & span {
+            color: #fff;
+            opacity: 0.42;
+            font-size: 14px;
+
+            @media screen and (max-width: $w480) {
+                font-size: 13px;
+            }
+        }
+
+        & .bgimage {
+            padding-top: 20px;
+            @include bgimage-contain;
+            width: rem(150);
+            margin-left: rem(10);
+
+            @media screen and (max-width: $w480) {
+                width: rem(130);
+            }
+        }
+    }
+}

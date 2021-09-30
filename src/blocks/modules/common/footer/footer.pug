@@ -1,0 +1,17 @@
+.footer
+  .container
+    .footer-nav
+      nav
+        ul
+          each item in app.mainMenu
+            li: a(href=item.href)= item.text
+    .footer-info
+      .footer-info__dev
+        a(href='https://promicom.ru')
+          span Digital-агентство
+          +bgimage('../img/common/dev.svg')
+      .footer-info__msgr
+        ul
+          li.ic_fb: a(href='#'): +icons('#ic_fb')
+          li.ic_vk: a(href='#'): +icons('#ic_vk')
+          li.ic_ig: a(href='#'): +icons('#ic_ig')

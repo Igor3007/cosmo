@@ -4,7 +4,10 @@ mixin home-news
   section.section-home-news
     .container
       .home-news
-        .home-news__list  
-          each item in app.news  
-            .home-news__item: +news-card(item)
+        .home-news__list
+          .swiper-container(data-swiper="homenews")
+            .swiper-wrapper
+              each item in app.news 
+                .swiper-slide
+                  .home-news__item: +news-card(item)
 

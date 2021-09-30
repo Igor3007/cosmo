@@ -8,22 +8,44 @@
 
     &__text {
         @include col();
-        @include size-w1024(4);
+        @include size-w1440(4);
+        @include size-w940(5);
+        @include size(12);
     }
 
     &__gallery {
         @include col();
-        @include size-w1024(8);
+        @include size-w1440(8);
+        @include size-w940(7);
+        @include size(12);
     }
 
     &__title {
         @include section-title;
         padding-bottom: rem(25);
+
+        @media screen and (max-width: $w940) {
+            text-align: center;
+        }
     }
 
     &__desc {
-        max-width: 400px;
+        max-width: 380px;
         margin-right: auto;
+        font-size: 15px;
+        line-height: 150%;
+        font-weight: 300;
+
+        @media screen and (max-width: $w1376) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: $w940) {
+            margin-right: 0;
+            max-width: 100%;
+            text-align: center;
+            padding-bottom: rem(30);
+        }
     }
 
     &__gallery {
@@ -32,12 +54,29 @@
             flex-wrap: wrap;
 
             & li {
-                @include size-w1024(4);
-                padding: 10px;
+                width: 33.33%;
+                padding: rem(10);
+
+                @media screen and (max-width: $w1280) {
+                    padding: 5px;
+                }
+
+                @media screen and (max-width: $w580) {
+                    padding: 2px;
+                }
+
+                @media screen and (max-width: $w360) {
+                    padding: 1px;
+                }
+
+                & a {
+                    display: block;
+                    overflow: hidden;
+                }
 
                 & .bgimage {
                     padding-top: 100%;
-                    @include bgimage-cover;
+                    @include bgimage-cover-scale;
                     background-color: #eee;
                 }
             }

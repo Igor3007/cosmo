@@ -1,13 +1,31 @@
-modules.define('header', ['i-bem-dom'], function(provide, bemDom) {
+$(document).ready(function(){
+    $('.burger').on('click', function(){
+        $(this).toggleClass('open')
+        $('.header__main').toggleClass('open')
+        $('header').toggleClass('open')
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
+        // var innerHeaderHeight = $('header').innerHeight()
+
+        // $('.mobile-menu').toggleClass('open').css({
+        //     'top': innerHeaderHeight+'px'
+        // })
+
+        $('html').toggleClass('hidden')
+    });
+
+
+    //закрыть при клике вне
+
+    $(document).on('click', function (e) {
+        var div = $(".burger, .header__main");  //класс элемента вне которого клик
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
+            //закрыть popup
+            if($('.burger').hasClass('open')){
+                $('.burger').trigger('click')
             }
+            
         }
-    }
-}));
+    });
 
-});
+   
+})
