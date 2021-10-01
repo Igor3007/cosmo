@@ -2,7 +2,7 @@
     @include section-padding;
 
     @media screen and (min-width: $w1376) {
-        padding-top: rem(15);
+        // padding-top: rem(15);
     }
 
 }
@@ -35,6 +35,33 @@
 
         &:hover {
             background-color: $gray;
+        }
+    }
+
+    &__list {
+        position: relative;
+
+        @media screen and (max-width: $w1280) {
+            margin: 0 40px;
+        }
+
+        @media screen and (max-width: $w760) {
+            margin: 0 25px !important;
+        }
+    }
+
+    & .swiper-nav {
+        left: -70px;
+        right: -70px;
+
+        @media screen and (max-width: $w1440) {
+            left: -36px;
+            right: -36px;
+        }
+
+        @media screen and (max-width: $w760) {
+            left: -30px;
+            right: -30px;
         }
     }
 }

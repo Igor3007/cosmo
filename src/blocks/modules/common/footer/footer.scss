@@ -94,6 +94,7 @@
         align-items: center;
         justify-content: space-between;
         padding-top: rem(30);
+        flex-direction: row-reverse;
 
         @media screen and (max-width: $w480) {
             flex-direction: column-reverse;

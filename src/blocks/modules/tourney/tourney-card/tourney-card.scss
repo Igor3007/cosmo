@@ -6,6 +6,8 @@
             padding-top: 40%;
             @include bgimage-cover-scale;
             background-color: #eee;
+
+            min-height: 145px;
         }
     }
 

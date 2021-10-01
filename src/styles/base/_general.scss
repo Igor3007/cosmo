@@ -81,6 +81,15 @@ section {
 
 }
 
+main {
+    padding-bottom: rem(40);
+
+    @media screen and (max-width: $w1280) {
+        padding-bottom: rem(20);
+
+    }
+}
+
 .container {
     max-width: 1500px;
     width: 100%;
@@ -181,16 +190,14 @@ section {
 @mixin section-title {
     font-style: normal;
     font-weight: bold;
-    font-size: rem(48);
+    font-size: rem(36);
     line-height: 110%;
     color: #000;
 
-    @media screen and (max-width: $w1280) {
-        font-size: rem(38);
-    }
 
-    @media screen and (max-width: $w1024) {
-        font-size: rem(36);
+
+    @media screen and (max-width: $w1280) {
+        font-size: rem(32);
     }
 
     @media screen and (max-width: $w480) {

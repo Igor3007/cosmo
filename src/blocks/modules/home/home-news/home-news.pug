@@ -10,4 +10,7 @@ mixin home-news
               each item in app.news 
                 .swiper-slide
                   .home-news__item: +news-card(item)
+          .swiper-nav
+            .swiper-nav__prev(data-swiper-prev="homenews"): +icons('#ic_swiper-prev', 17)
+            .swiper-nav__next(data-swiper-next="homenews"): +icons('#ic_swiper-next', 17)
 

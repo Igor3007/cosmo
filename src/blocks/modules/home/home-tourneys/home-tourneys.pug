@@ -4,10 +4,13 @@ mixin home-tourneys
   section.section-home-tourneys
     .container
       .home-tourneys
-        .home-tourneys__title
+        .home-tourneys__title Турниры
         .home-tourneys__list
           .swiper-container(data-swiper="hometournay")
             .swiper-wrapper
               each item in app.tourney
                 .swiper-slide
-                  .home-tourneys__item: +tourney-card(item) 
+                  .home-tourneys__item: +tourney-card(item)
+          .swiper-nav
+            .swiper-nav__prev(data-swiper-prev="hometournay"): +icons('#ic_swiper-prev', 17)
+            .swiper-nav__next(data-swiper-next="hometournay"): +icons('#ic_swiper-next', 17)

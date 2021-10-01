@@ -12,7 +12,7 @@
 
     &__main {
         display: flex;
-        padding-top: rem(25);
+        padding-top: rem(20);
     }
 
     &__date {
@@ -30,7 +30,7 @@
             display: block;
             min-width: rem(70);
             border: 1px solid $main;
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 5px;
 
             @media screen and (max-width: $w1376) {
@@ -61,9 +61,11 @@
                 font-style: normal;
                 font-weight: 300;
                 font-size: 12px;
-                line-height: 16px;
+                line-height: 10px;
                 text-align: center;
                 color: #000000;
+                position: relative;
+                top: -2px
             }
         }
     }

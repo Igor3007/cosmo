@@ -1,13 +1,68 @@
+// .section-home-tourneys {
+//     @include section-padding;
+
+//     padding-top: rem(40)
+// }
+
+// .swiper-container:not(.swiper-container-initialized) {
+//     & .home-tourneys {
+//         &__list {
+//             @include row-flex;
+//         }
+
+//         &__item {
+//             @include col();
+//             @include size-w1280(4);
+//             @include size-w760(6);
+//             @include size(12);
+//         }
+//     }
+// }
+
+// .home-tourneys {
+//     &__title {
+//         @include section-title;
+//         padding-bottom: rem(40);
+
+//         @media screen and (max-width: $w1376) {
+//             padding-bottom: rem(30);
+//         }
+//     }
+
+
+//     &__list {
+//         position: relative;
+//     }
+
+//     & .swiper-nav {
+//         top: 50%;
+//         left: -70px;
+//         right: -70px;
+//     }
+
+// }
+
 .section-home-tourneys {
     @include section-padding;
+    padding-top: rem(40);
 
-    padding-top: rem(40)
+    &:hover {
+
+        & .swiper-nav__prev,
+        & .swiper-nav__next {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
 }
 
+
+
 .swiper-container:not(.swiper-container-initialized) {
-    & .home-tourneys {
+    .home-tourneys {
         &__list {
             @include row-flex;
+            position: relative;
         }
 
         &__item {
@@ -17,4 +72,65 @@
             @include size(12);
         }
     }
+}
+
+.home-tourneys {
+    &__title {
+        @include section-title;
+        padding-bottom: rem(40);
+
+        @media screen and (max-width: $w1376) {
+            padding-bottom: rem(30);
+        }
+
+        @media screen and (max-width: $w580) {
+            text-align: center;
+        }
+    }
+
+    &__list {
+        position: relative;
+
+        @media screen and (max-width: $w1280) {
+            margin: 0 40px;
+        }
+
+        @media screen and (max-width: $w760) {
+            margin: 0 25px !important;
+        }
+    }
+
+    & .swiper-nav {
+        top: calc(50% + 3px);
+        left: -70px;
+        right: -70px;
+
+        @media screen and (max-width: $w1440) {
+            left: -36px;
+            right: -36px;
+        }
+
+        @media screen and (max-width: $w760) {
+            left: -30px;
+            right: -30px;
+        }
+    }
+
+    & .swiper-nav__prev {
+        transform: translateX(5px);
+
+    }
+
+    & .swiper-nav__next {
+        transform: translateX(-5px);
+
+    }
+
+    & .swiper-nav__prev,
+    & .swiper-nav__next {
+        transition: 0.15s ease-in;
+        opacity: 0;
+    }
+
+
 }

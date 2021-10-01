@@ -8,6 +8,10 @@
     slidesPerView: 8,
     spaceBetween: 15,
     loop: true,
+    navigation: {
+      nextEl: '[data-swiper-next="clients"]',
+      prevEl: '[data-swiper-prev="clients"]'
+    },
      
     breakpoints: {
       0: {

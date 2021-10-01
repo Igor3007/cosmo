@@ -25,7 +25,7 @@
         & .bgimage {
             padding-top: 37.2%;
             @include bgimage-cover;
-            min-height: rem(600);
+            min-height: rem(550);
             background-color: #eee;
 
             @media screen and (max-width: $w480) {
@@ -64,7 +64,7 @@
 
     &__title {
 
-        max-width: rem(480);
+        max-width: rem(500);
         margin-right: auto;
 
         @media screen and (max-width: $w480) {
@@ -96,14 +96,14 @@
 
         }
 
-        padding-bottom: rem(25);
+        padding-bottom: rem(20);
     }
 
     &__desc {
 
 
         color: #000;
-        max-width: 480px;
+        max-width: rem(500);
         margin-right: auto;
         padding-bottom: rem(25);
         font-size: 15px;

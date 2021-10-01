@@ -142,6 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 40,
     loop: true,
+    navigation: {
+      nextEl: '[data-swiper-next="homenews"]',
+      prevEl: '[data-swiper-prev="homenews"]'
+    },
      
     breakpoints: {
       0: {
@@ -170,6 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 40,
     loop: true,
+    navigation: {
+      nextEl: '[data-swiper-next="hometournay"]',
+      prevEl: '[data-swiper-prev="hometournay"]'
+    },
      
     breakpoints: {
       0: {

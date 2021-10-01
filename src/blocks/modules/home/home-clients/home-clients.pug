@@ -2,7 +2,7 @@ mixin home-clients ()
   section.section-home-clients 
     .container
       .home-clients
-        .home-clients__title Наши клиенты
+        //- .home-clients__title Наши клиенты
         .home-clients__list
           .swiper-container(data-swiper="clients")
             .swiper-wrapper
@@ -10,3 +10,6 @@ mixin home-clients ()
                 .swiper-slide
                   .home-clients__item
                     a(href=item.link): +bgimage(item.img)
+          .swiper-nav
+            .swiper-nav__prev(data-swiper-prev="clients"): +icons('#ic_swiper-prev', 17)
+            .swiper-nav__next(data-swiper-next="clients"): +icons('#ic_swiper-next', 17)

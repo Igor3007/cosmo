@@ -206,6 +206,10 @@ var clients = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-swiper="
   slidesPerView: 8,
   spaceBetween: 15,
   loop: true,
+  navigation: {
+    nextEl: '[data-swiper-next="clients"]',
+    prevEl: '[data-swiper-prev="clients"]'
+  },
   breakpoints: {
     0: {
       slidesPerView: 3,
@@ -418,6 +422,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 40,
     loop: true,
+    navigation: {
+      nextEl: '[data-swiper-next="homenews"]',
+      prevEl: '[data-swiper-prev="homenews"]'
+    },
     breakpoints: {
       0: {
         slidesPerView: 1
@@ -440,6 +448,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 40,
     loop: true,
+    navigation: {
+      nextEl: '[data-swiper-next="hometournay"]',
+      prevEl: '[data-swiper-prev="hometournay"]'
+    },
     breakpoints: {
       0: {
         slidesPerView: 1
