@@ -1,5 +1,10 @@
 .breadcrumb {
 
+    $color: #777;
+    $fontsize: 13px;
+
+    /* ============================== */
+
     background-color: transparent;
     padding: 0 0 rem(20) 0;
 
@@ -14,8 +19,8 @@
     & li {
 
         & a {
-            color: $main;
-            font-size: 14px;
+            color: $color;
+            font-size: $fontsize;
 
             &:hover {
                 text-decoration: underline;
@@ -25,12 +30,12 @@
         &::after {
             content: '·';
             margin: 0 rem(10);
-            color: $main;
+            color: $color;
             display: inline-block;
             border-radius: 50%;
             position: relative;
 
-            font-size: 14px;
+            font-size: $fontsize;
         }
 
         &:last-child::after {
@@ -52,7 +57,7 @@
             & a {
                 font-style: normal;
                 font-weight: 500;
-                font-size: 13px;
+                font-size: $fontsize;
                 line-height: 116%;
                 text-align: center;
                 padding: rem(7) rem(15) rem(8) rem(15);
@@ -62,7 +67,7 @@
                 display: inline-block;
                 text-decoration: none;
                 margin-right: rem(10);
-                color: $main;
+                color: $color;
 
                 @media screen and (max-width: $w480) {
                     background: transparent;
@@ -95,7 +100,7 @@
             }
 
             & a {
-                font-size: 14px;
+                font-size: $fontsize;
                 text-decoration: underline;
 
                 &:hover {

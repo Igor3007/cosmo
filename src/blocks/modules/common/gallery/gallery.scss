@@ -1,0 +1,65 @@
+.gallery-page {
+
+    @include section-padding;
+
+    padding-top: 0;
+
+    & ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        & li {
+            width: 25.00%;
+            padding: rem(10);
+
+            @media screen and (max-width: $w1280) {
+                padding: 5px;
+            }
+
+            @media screen and (max-width: $w940) {
+                width: 33.33%;
+            }
+
+            @media screen and (max-width: $w580) {
+                padding: 2px;
+            }
+
+            @media screen and (max-width: $w360) {
+                padding: 1px;
+            }
+
+            & a {
+                display: block;
+                overflow: hidden;
+            }
+
+            & .bgimage {
+                padding-top: 100%;
+                @include bgimage-cover-scale;
+                background-color: #eee;
+            }
+        }
+    }
+
+    &__list {
+        padding-bottom: rem(50);
+
+        @media screen and (max-width: $w1280) {
+            padding-bottom: rem(30);
+        }
+    }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+
+        & .btn-line {
+            @media screen and (min-width: $w1280) {
+                height: rem(55);
+                width: 100%;
+                max-width: rem(255);
+            }
+        }
+    }
+}

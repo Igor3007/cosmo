@@ -1,0 +1,8 @@
+mixin gallery()
+  .gallery-page
+    .gallery-page__list
+      ul
+        each item in app.galleryPage
+          li: a(href=item.thumb data-fancybox="gallery" data-type="image"): +bgimage(item.thumb)
+    .gallery-page__more
+      button.btn.btn-line Показать ещё

@@ -40,3 +40,23 @@
         }
     }
 }
+
+.page {
+    &__title {
+        padding-bottom: rem(25);
+
+        &--news {
+            max-width: 910px;
+        }
+    }
+
+
+
+    &__breadcrumbs {
+        padding-bottom: rem(20);
+
+        &--news {
+            max-width: 910px;
+        }
+    }
+}

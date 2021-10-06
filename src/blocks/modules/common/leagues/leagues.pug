@@ -1,0 +1,175 @@
+mixin score(up, down)
+  .lt-score
+    span= up
+    span= down
+
+
+
+
+mixin leagues
+  .leagues
+    .leagues__nav
+      ul
+        li: span.active Лига “Кубок” этап “Лето-2021”
+        li: span Лига “Кубок” этап “Весна-2021”
+        li: span Лига “Кубок” этап “Весна-2021”
+
+      .leagues__arhive: a(href='#'): button.btn.btn-line Архив
+    .leagues__table
+      table.tg 
+        colgroup
+          col(style='width: auto')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px')
+          col(style='width: 90px' class="color-yellow")
+          col(style='width: 90px' class="color-yellow")
+        thead
+          tr
+            th 
+            th 1.
+            th 2.
+            th 3.
+            th 4.
+            th 5.
+            th 6.
+            th 7.
+            th 8.
+            th 9.
+            th 10.
+            th Сеты
+            th Геймы
+        tbody
+          tr
+            td 1. Имя Фамилия
+            td
+            td: +score('6/0 6/0', '0')
+            td: +score('6/4 6/4', '1')
+            td: +score('6/2 6/0', '1')
+            td
+            td: +score('6/0 6/0', '0')
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 2. Имя Фамилия
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 3. Имя Фамилия
+            td: +score('6/0 6/0', '0')
+            td: +score('6/4 6/4', '1')
+            td
+            td
+            td.color-gray
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 4. Имя Фамилия
+            td: +score('6/0 6/0', '0')
+            td: +score('6/0 6/0', '0')
+            td
+            td
+            td: +score('6/4 6/4', '0')
+            td: +score('6/0 6/0', '1')
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 5. Имя Фамилия
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 6. Имя Фамилия
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 7. Имя Фамилия
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+          tr
+            td 
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td
+            td

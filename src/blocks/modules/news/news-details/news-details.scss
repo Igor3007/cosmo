@@ -1,0 +1,44 @@
+.news-details {
+    @include row-flex();
+
+    &__main {
+        @include col();
+        @include size-w940(8);
+
+        @media screen and (min-width: $w1440) {
+            padding-right: rem(40);
+        }
+    }
+
+    &__aside {
+        @include col();
+        @include size-w940(4);
+    }
+
+    &__aside {
+        & .news-card {
+            margin-bottom: rem(35);
+        }
+
+        @media screen and (min-width: $w360) and (max-width: $w940) {
+
+            padding-top: 30px;
+            display: flex;
+            overflow-x: auto;
+
+            & .news-card {
+                width: calc(50% - 20px);
+                margin: 5px;
+                min-width: 320px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        @media screen and (max-width: $w360) {
+            padding-top: 30px;
+        }
+    }
+}

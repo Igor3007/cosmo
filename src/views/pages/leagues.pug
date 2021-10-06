@@ -1,0 +1,25 @@
+extends ../layouts/index
+
+include ../../blocks/components/breadcrumb/breadcrumb.pug
+include ../../blocks/modules/common/leagues/leagues.pug
+
+
+
+block variables
+  include ../../data/data.pug
+
+
+block content
+
+  .container
+    .page
+      .page__title: h1 Лиги
+      .page__breadcrumbs: +breadcrumb(['Главная','Лиги'])
+      .page__main: +leagues()
+
+
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")

@@ -1,0 +1,136 @@
+.leagues {
+
+    & .lt-score {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .lt-score span:first-child {
+        border-bottom: 1px solid #bbb;
+    }
+
+    & .lt-score span {
+        font-size: 13px;
+
+        @media screen and (max-width: $w1440) {
+            font-size: 12px;
+        }
+    }
+
+    &__table {
+        & table {
+            border: 1px solid #DDD;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+
+
+
+            & .color-yellow {
+                background-color: #FAFFEC;
+            }
+
+            & .color-gray {
+                background-color: #eee;
+            }
+
+            & th,
+            & td {
+                border: 1px solid #DDD;
+                padding: 10px;
+            }
+
+            & td {
+                height: 90px;
+
+                &:first-child {
+                    font-weight: 600;
+                    padding-left: 25px;
+
+                    @media screen and (max-width: $w1440) {
+                        width: 250px;
+                        min-width: 250px;
+                    }
+                }
+
+                @media screen and (max-width: $w1440) {
+                    width: 60px;
+                    min-width: 60px;
+                    height: 65px;
+
+                }
+
+            }
+
+            & tr {
+                @media screen and (max-width: $w1440) {
+                    height: 60px;
+                }
+            }
+        }
+    }
+
+    &__nav {
+
+        padding-bottom: rem(45);
+        display: flex;
+        align-items: center;
+
+        & ul {
+            display: flex;
+            margin-right: auto;
+
+            & li {
+                margin-right: 45px;
+            }
+        }
+
+        & ul {
+            display: flex;
+
+            & li {
+                & span {
+                    display: inline-block;
+                    font-size: 15px;
+                    letter-spacing: 0.1em;
+                    color: $black;
+                    position: relative;
+                    cursor: pointer;
+
+                    font-weight: 300;
+
+                    @media screen and (max-width: $w1440) {
+                        font-size: 13px;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 0;
+                        bottom: -3px;
+                        height: 2px;
+                        background-color: $main;
+                        transition: 0.4s ease;
+                    }
+
+                    &.active {
+                        font-weight: bold;
+                    }
+
+                    &.active,
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+    }
+}

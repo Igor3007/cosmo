@@ -1,0 +1,10 @@
+include ../news-card/news-card.pug
+
+mixin news-list()
+  section.section-news-list
+    .news-list
+      .news-list__list
+        each item in app.news
+          .news-list__item: +news-card(item)
+      .news-list__more
+        button.btn.btn-line Показать ещё

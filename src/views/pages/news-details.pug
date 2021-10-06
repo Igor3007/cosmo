@@ -1,0 +1,25 @@
+extends ../layouts/index
+
+include ../../blocks/components/breadcrumb/breadcrumb.pug
+include ../../blocks/modules/news/news-details/news-details.pug
+
+
+
+block variables
+  include ../../data/data.pug
+
+
+block content
+
+  .container
+    .page
+      .page__title.page__title--news: h1 Сборные России - в ¼-й юниорских «Кубка Дэвиса» и «Кубка Билли Джин Кинг»
+      .page__breadcrumbs.page__breadcrumbs--news: +breadcrumb(['Главная','Сборные России - в ¼-й юниорских «Кубка Дэвиса» и «Кубка Билли Джин Кинг»'])
+      .page__main
+        +news-details() 
+
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")

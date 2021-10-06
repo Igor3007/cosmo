@@ -87,9 +87,8 @@
     &.btn-line {
         border: 1px solid $main;
         background: none;
-        text-transform: uppercase;
         font-weight: bold;
-        color: $main;
+        color: #000;
 
         & svg {
             fill: $main;

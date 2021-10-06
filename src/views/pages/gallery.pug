@@ -1,0 +1,25 @@
+extends ../layouts/index
+
+include ../../blocks/components/breadcrumb/breadcrumb.pug
+include ../../blocks/modules/common/gallery/gallery.pug
+
+
+
+block variables
+  include ../../data/data.pug
+
+
+block content
+
+  .container
+    .page
+      .page__title: h1 Галерея
+      .page__breadcrumbs: +breadcrumb(['Главная','Галлерея'])
+      .page__main
+        +gallery()
+
+
+
+block scripts
+  script(src="js/main.js?v=1.52")
+  script(src="js/vendor.js")
